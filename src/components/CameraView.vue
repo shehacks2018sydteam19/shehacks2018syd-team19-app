@@ -1,9 +1,9 @@
 <script>
   import { storage } from '@/services/firebase'
-  // import postCat from '@/mixins/postCat'
+  import postSnap from '@/mixins/postSnap'
 
   export default {
-    // mixins: [postCat],
+    mixins: [postSnap],
     data () {
       return {
         mediaStream: null
@@ -30,7 +30,7 @@
         return imageCapture.takePhoto().then(blob => {
           storage.ref().child('images/picture' + new Date().getTime()).put(blob)
             .then(res => {
-              this.postCat(res.metadata.downloadURLs[0], 'Hello')
+              this.postSnap(res.metadata.downloadURLs[0], 'Hello')
             })
         })
       }
