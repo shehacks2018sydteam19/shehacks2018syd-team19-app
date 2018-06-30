@@ -7,13 +7,13 @@
       getCats () {
         if (navigator.onLine) {
           this.saveCatsToCache()
-          return this.$root.cat
+          return this.$root.snap
         } else {
           return JSON.parse(localStorage.getItem('cats'))
         }
       },
       saveCatsToCache () {
-        this.$root.$firebaseRefs.cat.orderByChild('created_at').once('value', (snapchot) => {
+        this.$root.$firebaseRefs.snap.orderByChild('created_at').once('value', (snapchot) => {
           let cachedCats = []
           snapchot.forEach((catSnapchot) => {
             let cachedCat = catSnapchot.val()
