@@ -4,11 +4,11 @@
   export default {
     data () {
       return {
-        cat: null
+        snap: null
       }
     },
     mounted () {
-      this.cat = find(this.$root.cat, (cat) => cat['.key'] === this.$route.params.id)
+      this.snap = find(this.$root.snap, (snap) => snap['.key'] === this.$route.params.id)
     }
   }
 </script>
@@ -17,15 +17,15 @@
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--8-col">
       <div class="picture">
-        <img :src="cat.url" />
+        <img :src="snap.url" />
       </div>
       <div class="info">
-        <span>{{ cat.info }}</span>
+        <span>{{ snap.info }}</span>
       </div>
     </div>
     <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
       <div class="comment">
-        <span>{{ cat.comment }}</span>
+        <span>{{ snap.comment }}</span>
       </div>
       <div class="actions">
         <router-link class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" to="/post">
