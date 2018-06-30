@@ -8,9 +8,9 @@ const postSnap = {
           'info': 'Posted by App',
           'created_at': -1 * new Date().getTime()
         }
-      ).then(
-        this.$router.push('/')
-      )
+      ).then((result) => {
+        this.$router.push(`/detail/${result.key}`)
+      })
     }
   }
 }
