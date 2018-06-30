@@ -1,7 +1,7 @@
 const postSnap = {
   methods: {
     postSnap (catUrl, title) {
-      this.$root.$firebaseRefs.cat.push(
+      this.$root.$firebaseRefs.snap.push(
         {
           'url': catUrl,
           'comment': title,

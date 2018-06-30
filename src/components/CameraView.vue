@@ -30,7 +30,7 @@
         return imageCapture.takePhoto().then(blob => {
           storage.ref().child('images/picture' + new Date().getTime()).put(blob)
             .then(res => {
-              this.postSnap(res.metadata.downloadURLs[0], 'Hello')
+              this.postSnap(res.metadata.downloadURLs[0], 'Data')
             })
         })
       }
